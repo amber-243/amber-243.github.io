@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["calendar"]});
+      google.charts.setOnLoadCallback(drawChart);
+
+   function drawChart() {
+       var dataTable = new google.visualization.DataTable();
+       dataTable.addColumn({ type: 'date', id: 'Date' });
+       dataTable.addColumn({ type: 'number', id: 'Busyness' });
+       dataTable.addColumn({ type: 'string', role: 'tooltip' });
+       dataTable.addRows([
+          [ new Date(2026, 0, 26), 2, 'January  26: 2 Hours rehearsal' ],
+          [ new Date(2026, 0, 27), 2, 'January  27: 2 Hours rehearsal' ],
+          [ new Date(2026, 0, 28), 2, 'January  28: 2 Hours rehearsal' ],
+          [ new Date(2026, 0, 29), 2, 'January  29: 2 Hours rehearsal' ],
+          [ new Date(2026, 0, 30), 2, 'January  30: 2 Hours rehearsal' ],
+          [ new Date(2026, 1, 2), 2, 'February 2: 2 Hours rehearsal' ],
+          [ new Date(2026, 1, 3), 2, 'February 3: 2 Hours rehearsal' ],
+          [ new Date(2026, 1, 4), 2, 'February 4: 2 Hours rehearsal' ],
+          [ new Date(2026, 1, 5), 2, 'February 5: 2 Hours rehearsal' ],
+          [ new Date(2026, 1, 6), 2, 'February 6: 2 Hours rehearsal' ],
+          [ new Date(2026, 1, 9), 2, 'February 9: 2 Hours rehearsal' ],
+          [ new Date(2026, 1, 10), 2, 'February 10: 2 Hours rehearsal' ],
+          [ new Date(2026, 1, 11), 2, 'February 11: 2 Hours rehearsal' ],
+          [ new Date(2026, 1, 12), 2, 'February 12: 2 Hours rehearsal' ],
+          [ new Date(2026, 1, 13), 2, 'February 13: 2 Hours rehearsal' ],
+          [ new Date(2026, 1, 16), 2, 'February 16: 2 Hours rehearsal' ],
+          [ new Date(2026, 1, 17), 2, 'February 17: 2 Hours rehearsal' ],
+          [ new Date(2026, 1, 18), 2, 'February 18: 2 Hours rehearsal' ],
+          [ new Date(2026, 1, 19), 2, 'February 19: 2 Hours rehearsal' ],
+          [ new Date(2026, 1, 20), 2, 'February 20: 2 Hours rehearsal' ],
+          [ new Date(2026, 1, 21), 12, 'February 21: 12 Hours tech rehearsal' ],
+          [ new Date(2026, 1, 22), 12, 'February 22: 12 Hours tech rehearsal' ],
+          [ new Date(2026, 1, 23), 5, 'February 23: 3 Hours tech rehearsal' ],
+          [ new Date(2026, 1, 24), 5, 'February 24: 3 Hours tech rehearsal' ],
+          [ new Date(2026, 1, 25), 5, 'February 25: 4 Hours tech rehearsal' ],
+          [ new Date(2026, 1, 26), 5, 'February 26: 5 Hours dress rehearsal' ],
+          [ new Date(2026, 1, 27), 7, 'February 27: 4 Hours dress rehearsal and show' ],
+          [ new Date(2026, 1, 28), 7, 'February 28: 8 Hours two shows' ],
+          [ new Date(2026, 2, 1), 7, 'March 1: 6 Hours show and strike' ],
+        ]);
+
+       var chart = new google.visualization.Calendar(document.getElementById('calendar_basic'));
+
+       var options = {
+         title: "Tentative rehearsal schedule",
+         height: 700,
+         calendar: { cellSize: 40 },
+         colorAxis: {minValue: 0,  colors: ['#FFFFFF', '#0000FF']},
+       };
+
+       chart.draw(dataTable, options);
+   }
+    </script>
+  </head>
+  <body>
+    <div id="calendar_basic" style="width: 2000px; height: 700px;"></div>
+  </body>
+</html>
